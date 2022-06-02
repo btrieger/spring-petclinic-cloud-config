@@ -46,6 +46,8 @@ management:
       enabled: true
     prometheus:
       enabled: true
+    wavefront:
+      enabled: false
   endpoints:
     web:
       exposure:
@@ -54,6 +56,8 @@ management:
     export:
       prometheus:
         enabled: true
+      wavefront: 
+        enabled: false
 
 eureka.client.fetchRegistry: true
 spring.cloud.kubernetes.discovery.enabled: false
