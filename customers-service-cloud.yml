@@ -3,3 +3,22 @@ spring:
     url: ${vcap.services.credhub.credentials.jdbcUrl}&queryInterceptors=brave.mysql8.TracingQueryInterceptor&exceptionInterceptors=brave.mysql8.TracingExceptionInterceptor&zipkinServiceName=customers-db
     username: ${vcap.services.credhub.credentials.username}
     password: ${vcap.services.credhub.credentials.password}
+management:
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+    wavefront:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+      wavefront: 
+        enabled: false
+
